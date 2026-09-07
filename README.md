@@ -52,6 +52,25 @@ Faults follow a deterministic schedule, so all three produce identical results -
 - **[DESIGN.md](DESIGN.md)** - why deterministic faults (not RNG) make it a real CI
   gate, the outcome-stream vs live-injection trade-off, and the non-goals.
 
+## How it works
+
+```mermaid
+flowchart LR
+  classDef proc fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a
+  classDef good fill:#f0fdf4,stroke:#22c55e,color:#14532d
+  classDef bad fill:#fef2f2,stroke:#ef4444,color:#7f1d1d
+  classDef work fill:#faf5ff,stroke:#a855f7,color:#581c87
+  CALLS["Observed calls"]:::proc
+  FAULT["Inject faults"]:::work
+  MEAS["Success + p95"]:::proc
+  SLO{"SLO holds?"}:::work
+  PASS["Build passes"]:::good
+  FAIL["Build fails"]:::bad
+  CALLS --> FAULT --> MEAS --> SLO
+  SLO -->|yes| PASS
+  SLO -->|no| FAIL
+```
+
 ## Layout
 
 ```
