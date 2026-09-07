@@ -52,4 +52,15 @@ Faults follow a deterministic schedule, so all three produce identical results -
 - **[DESIGN.md](DESIGN.md)** - why deterministic faults (not RNG) make it a real CI
   gate, the outcome-stream vs live-injection trade-off, and the non-goals.
 
+## Layout
+
+```
+chaos-mesh-lite/
+├── python/   reference implementation + pytest suite
+├── csharp/   .NET 10 port - Chaos.cs + tests
+├── java/     JDK 17+ port (Maven)
+└── DESIGN.md the fault model, the SLO-gate contract, the non-goals
+```
+
+
 Part of [parag-labs](https://github.com/parag-labs) - small, focused tools for building AI systems you can trust.
