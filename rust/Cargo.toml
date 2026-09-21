@@ -1,0 +1,10 @@
+[package]
+name = "chaos-mesh-lite"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "chaos_mesh_lite"
+path = "src/lib.rs"
+
+[dependencies]
