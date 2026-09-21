@@ -8,6 +8,10 @@ one-off drill someone runs by hand and then forgets. The bet here is that the us
 version is a *gate*: inject a fault, assert the SLO still holds, and fail the build if
 it doesn't - so resilience is checked every time, not remembered occasionally.
 
+![architecture](docs/diagrams/architecture.png)
+
+*The master view of the inject -> measure -> judge gate. SVG source: [docs/diagrams/architecture.svg](docs/diagrams/architecture.svg).*
+
 ## Problem and goals
 
 You believe your service tolerates some added latency or a fraction of failures - but
