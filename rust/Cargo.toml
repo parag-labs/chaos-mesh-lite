@@ -1,7 +1,8 @@
 [package]
 name = "chaos-mesh-lite"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+rust-version = "1.99"
 
 [lib]
 name = "chaos_mesh_lite"

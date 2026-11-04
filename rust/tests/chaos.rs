@@ -1,4 +1,4 @@
-use chaos_mesh_lite::{evaluate_slo, percentile, run_experiment, FaultPolicy, Slo};
+use chaos_mesh_lite::{FaultPolicy, Slo, evaluate_slo, percentile, run_experiment};
 
 fn repeat(v: f64, n: usize) -> Vec<f64> {
     vec![v; n]

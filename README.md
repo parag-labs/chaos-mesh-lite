@@ -35,12 +35,12 @@ python src/cli.py latencies.txt --added-latency 300 --fail-every 20 --min-succes
 
 | Language | Tests | Run |
 |----------|:-----:|-----|
-| Python | 8 | `cd python && pytest -q` |
+| Python (3.15+) | 8 | `cd python && pytest -q` |
 | C# (.NET 10) | 8 | `cd csharp && dotnet test` |
-| Java (17+) | 8 | `cd java && mvn test` |
-| Go (1.22+) | 16 | `cd go && go test ./...` |
-| Rust | 16 | `cd rust && cargo test` |
-| TypeScript | 16 | `cd ts && npm install && npm test` |
+| Java (25 LTS) | 8 | `cd java && mvn test` |
+| Go (1.27+) | 16 | `cd go && go test ./...` |
+| Rust (1.99+, edition 2024) | 16 | `cd rust && cargo test` |
+| TypeScript (Node 26 LTS) | 16 | `cd ts && npm install && npm test` |
 
 Faults follow a deterministic schedule, so all six produce identical results - no flaky chaos. The Go, Rust and TypeScript ports add extra edge-case coverage (empty input, all-calls-fail, `fail_every_n = 0`, breach ordering and message formatting) on top of the shared eight-test core.
 
@@ -80,8 +80,8 @@ flowchart LR
 chaos-mesh-lite/
 ├── python/   reference implementation + pytest suite
 ├── csharp/   .NET 10 port - Chaos.cs + tests
-├── java/     JDK 17+ port (Maven)
-├── go/        Go 1.22+ port (go test)
+├── java/     JDK 25 port (Maven)
+├── go/        Go 1.27+ port (go test)
 ├── rust/      Rust port (cargo test) - lib + integration tests
 ├── ts/        TypeScript port (vitest) - strict tsconfig, ESM
 └── DESIGN.md the fault model, the SLO-gate contract, the non-goals

@@ -8,5 +8,5 @@
 pub mod chaos;
 
 pub use chaos::{
-    evaluate_slo, percentile, run_experiment, ExperimentResult, FaultPolicy, Slo, SloResult,
+    ExperimentResult, FaultPolicy, Slo, SloResult, evaluate_slo, percentile, run_experiment,
 };
